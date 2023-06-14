@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+
+// Defining the user Schema so that only matched type with schema will be saved to database
+// also making all feilds require: true so that it will be necessary to have this feilds in request
 const userSchema = mongoose.Schema({
     username: {
         type: String,
