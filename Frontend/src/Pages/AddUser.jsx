@@ -34,38 +34,49 @@ function AddUser() {
   const navigate = useNavigate();
 
   const toast = useToast();
-
+  
+//  Regular expression pattern to validate a mobile number.
   const mobilePattern = /^[1-9]\d{0,9}$/;
+  
+//   Regular expression pattern to validate an email address.
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+  //   function for Checking if a mobile number is valid.
   const isValidMobileNumber = (mobileNumber) => {
     return mobilePattern.test(mobileNumber);
   };
 
+//   function for Checking if a Email is valid.
   const isValidEmail = (email) => {
     return emailPattern.test(email);
   };
 
+//   Getting input value of username
   const handleUsernameChange = (e) => {
     setUsername(e.target.value.toLowerCase());
     setIsUsernameEmpty(false);
   };
 
+  //   Getting input value of email
   const handleEmailChange = (e) => {
     setEmail(e.target.value.toLowerCase());
     setIsEmailEmpty(false);
   };
-
+  
+//   Getting input value of mobile Number
   const handleMobileNumber = (e) => {
     setMobileNum(e.target.value);
     setIsMobileNumEmpty(false);
   };
 
+  //   Getting input value of Address
   const handleAddressChange = (e) => {
     setAddress(e.target.value);
     setIsAddressEmpty(false);
   };
-
+  
+  
+// Button Click Event
   const submitFormData = () => {
     if (username.trim() === "") {
       setIsUsernameEmpty(true);
